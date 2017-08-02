@@ -17,6 +17,52 @@
 ._keyfocus :focus, input:focus:not([disabled]), textarea:focus:not([disabled]), select:focus:not([disabled]) {
     box-shadow: none;
 }
+.abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist {
+    background: white !important;
+    font-family: "Dosis",sans-serif !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    color: #888 !important;
+    border-color: #888;
+    -webkit-border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
+    border-radius: 1.5em;
+    letter-spacing: .1875rem;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    -webkit-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -moz-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -ms-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -o-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -webkit-background-clip: padding-box;
+}
+.abs-action-addto-product:hover, .block-event .slider-panel .slider .item .action.event:hover, .bundle-options-container .block-bundle-summary .product-addto-links > .action:hover, .product-info-main .action.tocompare:hover, .product-options-bottom .action.tocompare:hover, .product-info-main .action.towishlist:hover, .product-options-bottom .action.towishlist:hover, .block-bundle-summary .action.towishlist:hover, .actions-toolbar button:hover {
+    background: #888 !important;
+    color: white !important;
+}
+.actions-toolbar button {
+    background: white !important;
+    font-family: "Dosis",sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px  !important;
+    text-transform: uppercase;
+    text-align: center;
+    color: #888 !important;
+    border-color: #888 !important;
+    -webkit-border-radius: 1.5em !important;
+    -moz-border-radius: 1.5em !important;
+    border-radius: 1.5em !important;
+    padding: 5px 12px 5px 12px !important;
+    line-height: 0 !important;
+    -webkit-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -moz-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -ms-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -o-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -webkit-background-clip: padding-box;
+}
 /** Header **/
 .header {
     font-size: 13px !important;
@@ -225,7 +271,7 @@
 }
 .action.primary:hover {
     color: #164194;
-    background: white !important;
+    background: white;
 }
 #send2 {
     line-height: 1.3;
@@ -386,13 +432,20 @@
     .langs-wrapper {
         float: none !important;
         margin-top: 15px;
-        margin-bottom: 0px !important;
+        margin-bottom: 0 !important;
     }
     .langs-others-container {
-        left: 0px !important;
+        left: 0 !important;
+    }
+    .header .links {
+        margin-right: 35px !important;
     }
     .header-mini-links {
-        margin-right: 0px !important;
+        margin-right: 0 !important;
+        padding-right: 60px !important;
+    }
+    .minicart-wrapper {
+        margin-right: 30px !important;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -400,6 +453,7 @@
         margin-top: 0 !important;
         top: 25px !important;
         right: 35px !important;
+        margin-right: 30px !important;
     }
     .minicart-wrapper .block-minicart {
         right: -17px !important;
