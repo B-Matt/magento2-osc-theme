@@ -1,0 +1,76 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header"> <!-- Deletes welcome message in the header -->
+            <arguments>
+                <argument name="show_part" xsi:type="string">other</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!-- Top Links -->
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="osc.link" before="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">OSC</argument>
+                    <argument name="path" xsi:type="string" translate="false">http://softwarecity.hr/</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="home.link" after="osc.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Home</argument>
+                    <argument name="path" xsi:type="string" translate="false"></argument>
+                    <urlParams helper="core/url/getHomeUrl" />
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="store.link" after="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">My Store</argument>
+                    <argument name="path" xsi:type="string" translate="false">#</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link" name="store.link.postfix" after="store.link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="false">▼</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <!-- Footer -->
+        <referenceContainer name="footer-container">
+            <block class="Magento\Theme\Block\Html\Footer" name="language.switch" as="language.switch" template="html/languages.phtml" />
+        </referenceContainer>
+
+        <!-- Sub header -->
+        <referenceContainer name="page.top">
+            <container name="header.second" as="header_second" htmlTag="div" htmlClass="header-mini" before="navigation.sections">
+                <container name="header.links" as="header_links" htmlTag="div" htmlClass="header-mini-links" before="-"/>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header.links">
+            <block class="Magento\Framework\View\Element\Template" name="header.mini.container" template="Magento_Theme::html/accounts.phtml"/>
+        </referenceContainer>
+
+        <!-- Moves -->
+        <move element="header.panel" destination="header-wrapper" />
+
+        <move element="store.link.postfix" destination="store.link" />
+
+        <move element="minicart" destination="header-wrapper" after="top.links" />
+        <move element="my-account-link" destination="header.links" before="catalog.compare.link" />
+        <move element="wish-list-link" destination="header.links" after="my-account-link" />
+        <move element="catalog.compare.link" destination="header.links" before="-" />
+        <move element="authorization-link" destination="header.links" after="-" />
+        <move element="language.switch" destination="footer" />
+
+        <!-- Removes -->
+        <referenceBlock name="top.search"           remove="true" />
+        <referenceBlock name="advanced-search-link" remove="true" />
+        <referenceBlock name="store_language"       remove="true" />
+        <referenceBlock name="register-link"        remove="true" />
+        <referenceBlock name="footer_links"         remove="true" />
+        <referenceBlock name="report.bugs"          remove="true" />
+    </body>
+</page>

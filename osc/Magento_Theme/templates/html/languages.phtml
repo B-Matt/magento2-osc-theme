@@ -1,0 +1,25 @@
+<?php
+    $storeManager = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Store\Model\StoreManagerInterface');
+?>
+
+<div class="langs-wrapper">
+    <ul class="langs-others-container">
+        <?php foreach ($storeManager->getStores() as $_lang): ?>
+            <?php if ($_lang->getCode() != 'default'): ?>
+                <li>
+                    <a href="#" data-post="<?php echo '{&quot;action&quot;:&quot;http:\/\/localhost\/magento2\/stores\/store\/switch\/&quot;,&quot;data&quot;:{&quot;___store&quot;:&quot;' . $_lang->getCode() . '&quot;,&quot;uenc&quot;:&quot;aHR0cDovL2xvY2FsaG9zdC9tYWdlbnRvMi8,&quot;}}'; ?>">
+                        <img src="<?php echo $this->getViewFileUrl('images/flags/' . $_lang->getCode() . '.png');?>" alt="<?php echo $_lang->getCode();?>" />
+                        <?php echo __(ucfirst($_lang->getCode())); ?>
+                    </a>
+                </li>
+            <?php endif;?>
+        <?php endforeach;?>
+    </ul>
+    <div class="langs-current-language">
+        <img src="<?php echo $this->getViewFileUrl('images/flags/' . $storeManager->getStore()->getCode() . '.png');?>" alt="<?php echo $storeManager->getStore()->getCode();?>" />
+        <?php echo __(ucfirst($storeManager->getStore()->getCode())); ?>
+        <b class="langs-drop-arrow">
+            <i class="fa fa-sort-desc" aria-hidden="true"></i>
+        </b>
+    </div>
+</div>
