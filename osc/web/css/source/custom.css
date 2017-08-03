@@ -17,7 +17,8 @@
 ._keyfocus :focus, input:focus:not([disabled]), textarea:focus:not([disabled]), select:focus:not([disabled]) {
     box-shadow: none;
 }
-.abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist {
+.abs-action-addto-product, .block-event .slider-panel .slider .item .action.event, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-info-main .action.tocompare, .product-options-bottom .action.tocompare, .product-info-main .action.towishlist, .product-options-bottom .action.towishlist, .block-bundle-summary .action.towishlist
+{
     background: white !important;
     font-family: "Dosis",sans-serif !important;
     font-weight: 500;
@@ -31,6 +32,7 @@
     letter-spacing: .1875rem;
     padding-right: 1.5em;
     padding-left: 1.5em;
+    padding-top: 7px;
     -webkit-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -moz-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -ms-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
@@ -38,7 +40,8 @@
     transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -webkit-background-clip: padding-box;
 }
-.abs-action-addto-product:hover, .block-event .slider-panel .slider .item .action.event:hover, .bundle-options-container .block-bundle-summary .product-addto-links > .action:hover, .product-info-main .action.tocompare:hover, .product-options-bottom .action.tocompare:hover, .product-info-main .action.towishlist:hover, .product-options-bottom .action.towishlist:hover, .block-bundle-summary .action.towishlist:hover, .actions-toolbar button:hover {
+.abs-action-addto-product:hover, .block-event .slider-panel .slider .item .action.event:hover, .bundle-options-container .block-bundle-summary .product-addto-links > .action:hover, .product-info-main .action.tocompare:hover, .product-options-bottom .action.tocompare:hover, .product-info-main .action.towishlist:hover, .product-options-bottom .action.towishlist:hover, .block-bundle-summary .action.towishlist:hover, .actions-toolbar button:hover
+{
     background: #888 !important;
     color: white !important;
 }
@@ -55,7 +58,6 @@
     -moz-border-radius: 1.5em !important;
     border-radius: 1.5em !important;
     padding: 5px 12px 5px 12px !important;
-    line-height: 0 !important;
     -webkit-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -moz-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -ms-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
@@ -63,13 +65,51 @@
     transition: all 460ms cubic-bezier(0.7,0,0.3,1);
     -webkit-background-clip: padding-box;
 }
+.cart.table-wrapper .actions-toolbar > .action, .cart.table-wrapper .action-gift, .cart-container .form-cart .action.clear, .cart-container .form-cart .action.update, .cart-container .form-cart .action.continue
+{
+    background: white !important;
+    font-family: "Dosis",sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px  !important;
+    text-transform: uppercase;
+    text-align: center;
+    color: #888 !important;
+    border-color: #888 !important;
+    -webkit-border-radius: 1.5em !important;
+    -moz-border-radius: 1.5em !important;
+    border-radius: 1.5em !important;
+    padding: 5px 12px 5px 12px !important;
+    -webkit-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -moz-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -ms-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -o-transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    transition: all 460ms cubic-bezier(0.7,0,0.3,1);
+    -webkit-background-clip: padding-box;
+}
+.cart.table-wrapper .actions-toolbar > .action:hover, .cart.table-wrapper .action-gift:hover, .cart-container .form-cart .action.clear:hover, .cart-container .form-cart .action.update:hover, .cart-container .form-cart .action.continue:hover
+{
+    background: #888 !important;
+    color: white !important;
+}
 /** Header **/
 .header {
-    font-size: 13px !important;
-    line-height: 2.5;
+    font-family: "Dosis",sans-serif;
+    line-height: 2.95 !important;
+    letter-spacing: .09375rem;
+    text-transform: uppercase;
 }
 .header > li a {
+    font-size: 15px;
     color: white;
+    -webkit-transition: color 460ms cubic-bezier(0.7,0,0.3,1);
+    -moz-transition: color 460ms cubic-bezier(0.7,0,0.3,1);
+    -ms-transition: color 460ms cubic-bezier(0.7,0,0.3,1);
+    -o-transition: color 460ms cubic-bezier(0.7,0,0.3,1);
+    transition: color 460ms cubic-bezier(0.7,0,0.3,1);
+}
+.header > li a:hover {
+    color: #FFD500;
+    text-decoration: none;
 }
 .logo img {
     width: 100px;
@@ -78,15 +118,20 @@
     background-color: #164194;
     border-bottom: 4px solid #FFD500 !important;
 }
-.header > li {
-    font-size: 16px !important;
+.header.panel > .header.links {
+    margin-right: 15px !important;
 }
-
+.effect-arrow {
+    position: relative;
+    top: -1.5px;
+    right: 2px;
+    font-weight: bold;
+}
 /** Minicart **/
 .minicart-wrapper {
     position: absolute;
     display: inline-block;
-    top: 42px;
+    top: 40px;
     right: 5px;
 }
 .minicart-wrapper .action.showcart .counter.qty {
@@ -99,6 +144,9 @@
 }
 .action.showcart::before {
     color:white !important;
+}
+.block-minicart {
+    right: -35px !important;
 }
 .block-minicart .block-content > .actions > .primary .action.primary {
     line-height: 0 !important;
@@ -121,7 +169,7 @@
     margin-right: -20px;
 }
 .minicart-items .item-qty {
-    margin-left: 10px;
+    margin-left: 35px;
 }
 /** Item Catalogs **/
 .widget-product-grid .actions-primary button {
@@ -269,6 +317,11 @@
     font-size: 1.1rem;
     height: 28px !important;
 }
+.cart-container .checkout-methods-items .action.primary {
+    line-height: 0 !important;
+    padding: 15px 17px 14px 17px !important;
+    font-size: 14px !important;
+}
 .action.primary:hover {
     color: #164194;
     background: white;
@@ -330,10 +383,10 @@
     border-bottom: 2px solid #FFD500;
     text-indent: 45px;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 2.1;
-    margin-top: 50px;
-    margin-left: 30px;
+    margin-top: 40px;
+    margin-left: 60px;
     padding: 5px;
     cursor: pointer;
 }
@@ -345,33 +398,39 @@
     left: 15px;
 }
 .langs-drop-arrow {
+    position: relative;
+    top: -3px;
     font-size: 13px;
     text-indent: 5px;
-    line-height: 2.08;
+}
+.langs-others-container-inline {
+    display: inline-flex !important;
 }
 .langs-others-container {
     display: none;
     position: absolute;
-    width: 170px;
-    left: 0;
-    bottom: 40px;
+    width: auto;
+    min-width: 230px;
+    left: 140px;
+    top: 0;
     background: #FFD500;
     -moz-box-shadow: 5px 2px 10px rgba(0,0,0,0.4);
     box-shadow: 5px 2px 10px rgba(0,0,0,0.4);
     -moz-border-radius: 0 0 2px 2px;
     border-radius: 0 0 3px 3px;
     border: 1px solid #123271;
-    padding: 5px !important;
+    padding: 4px !important;
+    padding-right: 10px !important;
 }
 .langs-others-container img {
     position: relative;
     top: 5px;
-    left: 0px;
+    left: 0;
     margin-right: 5px;
 }
 .langs-others-container li {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     text-indent: 10px;
 }
@@ -433,9 +492,7 @@
         float: none !important;
         margin-top: 15px;
         margin-bottom: 0 !important;
-    }
-    .langs-others-container {
-        left: 0 !important;
+        margin-left: 20px !important;
     }
     .header .links {
         margin-right: 35px !important;
@@ -449,6 +506,19 @@
     }
 }
 @media only screen and (max-width: 767px) {
+    .page-footer {
+        padding-bottom: 30px;
+    }
+    .langs-wrapper {
+        float: none !important;
+        margin-top: 25px;
+        margin-bottom: 0 !important;
+        margin-left: 20px !important;
+    }
+    .langs-others-container {
+        left: 0;
+        top: 39px;
+    }
     .minicart-wrapper {
         margin-top: 0 !important;
         top: 25px !important;

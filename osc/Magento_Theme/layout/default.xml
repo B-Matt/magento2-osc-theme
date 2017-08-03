@@ -31,11 +31,6 @@
                     <argument name="path" xsi:type="string" translate="false">#</argument>
                 </arguments>
             </block>
-            <block class="Magento\Framework\View\Element\Html\Link" name="store.link.postfix" after="store.link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="false">▼</argument>
-                </arguments>
-            </block>
         </referenceBlock>
 
         <!-- Footer -->
